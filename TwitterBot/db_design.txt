@@ -1,0 +1,9 @@
+CREATE TABLE users (
+    id          string
+    screen_name string
+    date_followed time
+    name        string
+    name        string
+    following   boolean
+    muting      boolean
+}
