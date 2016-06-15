@@ -71,3 +71,9 @@ def mass_follow(search_terms_file, users_file, followed_file, maximum_follow_del
                 count += 1
                 time.sleep(random.randrange(maximum_follow_delay - 10, maximum_follow_delay))
     print "Followed %d people." % count
+
+def check_rate_limit(url):
+    url = 'https://api.twitter.com/1.1/friendships/create'
+    mute_url = 'https://api.twitter.com/1.1/mute'
+    status = api.CheckRateLimit(mute_url)
+    print status
