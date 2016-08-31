@@ -46,6 +46,7 @@ def main():
     users_file = 'users.json'
     daily_followed_file = 'followed.txt'
     follow_limit = 1000
+    interval = 50
     max_follow_delay = 70
 
     followed = fileManager.check_daily_followed(daily_followed_file)
@@ -70,9 +71,19 @@ def main():
         else:
             fileManager.add_search_term(search_term)
 
-    while followed < 1000:
-        twitterApi.mass_follow(search_terms_file, users_file, daily_followed_file, max_follow_delay)
-        followed = fileManager.update_daily_followed(daily_followed_file)
+    # Alternate between following 50 and checking 50 followers
+
+    # Following
+    while followed < follow_limit:
+        session_followed = 0
+
+        while session_followed < interval:
+
+            twitterApi.mass_follow(search_terms_file, users_file, daily_followed_file, max_follow_delay)
+            followed = fileManager.update_daily_followed(daily_followed_file)
+
+        # Unfollowing
 
 
-main()
+if __name__ == "__main__":
+    main()

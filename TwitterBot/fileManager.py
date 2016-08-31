@@ -1,4 +1,5 @@
 import time
+import json
 
 def check_daily_followed(file_name):
     # date = datetime.datetime.today()

@@ -1,10 +1,16 @@
 import twitter
 import json
+import time
+import fileManager
+import random
+
+api = twitter.Api()
 
 
 def set_twitter_api(consumer_token, consumer_secret, access_token, access_token_secret):
-    return twitter.Api(consumer_key=consumer_token, consumer_secret=consumer_secret, access_token_key=access_token,
-                       access_token_secret=access_token_secret)
+    api = twitter.Api(consumer_key=consumer_token, consumer_secret=consumer_secret, access_token_key=access_token,
+                      access_token_secret=access_token_secret)
+    return api
 
 
 # Search for a user, returns an array of user screen names
@@ -53,9 +59,25 @@ def follow_user(json_file, screen_name, is_followed_by):
             json.dump(object, f)
 
 
+def unfollow_user(json_file, screen_name):
+    try:
+        with open(json_file, 'r+') as f:
+            data = json.load(f)
+            if screen_name in data:
+                data[screen_name].following = False
+                json.dump(data, f)
+    except:
+        pass
+
+
+def mass_unfollow(users_file):
+    users_json = fileManager.open_file(users_file)
+    for user in users_json:
+
+
 def mass_follow(search_terms_file, users_file, followed_file, maximum_follow_delay):
-    terms = get_search_terms(search_terms_file)
-    users_json = open_file(users_file)
+    terms = fileManager.get_search_terms(search_terms_file)
+    users_json = fileManager.open_file(users_file)
     count = 0
     for term in terms:
         users = search_term(term)
@@ -66,11 +88,12 @@ def mass_follow(search_terms_file, users_file, followed_file, maximum_follow_del
                 connections = lookup_friendship(
                     user)  # of the form {u'muting': False, u'followed_by': False, u'following': False, u'following_received': False, u'blocking': False, u'following_requested': False}
                 follow_user(users_file, user, connections['followed_by'])
-                update_daily_followed(followed_file)
+                fileManager.update_daily_followed(followed_file)
                 print "Followed %s" % user
                 count += 1
                 time.sleep(random.randrange(maximum_follow_delay - 10, maximum_follow_delay))
     print "Followed %d people." % count
+
 
 def check_rate_limit(url):
     url = 'https://api.twitter.com/1.1/friendships/create'
