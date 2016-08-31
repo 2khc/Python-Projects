@@ -1,0 +1,140 @@
+{
+    "hits": {
+        "hits": [
+            {
+                "_score": 1.0,
+                "_type": "item",
+                "_id": "8c57949168351a72faaba1ed13c9dea3e50ccf429d2d2df0d030f49118307259",
+                "_source": {
+                    "info": {
+                        "name": "Voll's Protector",
+                        "typeLine": "Holy Chainmail",
+                        "tokenized": {
+                            "fullName": "voll's protector holy chainmail",
+                            "flavourText": "although a great leader during the war, voll proved disastrous in times of peace."
+                        },
+                        "flavourText": "Although a great leader during the war, Voll proved disastrous in times of peace.",
+                        "fullName": "Voll's Protector Holy Chainmail",
+                        "icon": "http://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/StrInt3AUnique.png"
+                    },
+                    "shop": {
+                        "updated": 1470728873000,
+                        "added": 1470590095000,
+                        "verified": "YES",
+                        "chaosEquiv": 1,
+                        "saleType": "b/o",
+                        "price": {
+                            "Chaos Orb": 1
+                        },
+                        "modified": 1470590095000,
+                        "stash": {
+                            "inventoryID": "Stash4",
+                            "stashID": "22733c7d68e4a0edc154fac42f29a904c947b18412448efd690bed344abf560e",
+                            "xLocation": "4",
+                            "yLocation": "7",
+                            "stashName": "shop2"
+                        },
+                        "hasPrice": true,
+                        "note": "~b/o 1 chaos",
+                        "currency": "Chaos Orb",
+                        "amount": "1",
+                        "shelfLife": 138778,
+                        "lastCharacterName": "FantAssTic",
+                        "sellerAccount": "antwnic4",
+                        "defaultMessage": "@FantAssTic I would like to buy your Voll's Protector Holy Chainmail listed for 1 Chaos Orb (League:Prophecy, Stash Tab:\"shop2\" [x4,y7])",
+                        "priceSource": "note"
+                    },
+                    "mods": {
+                        "Body": {
+                            "explicit": {
+                                "Gain a Power Charge for each Enemy you hit with a Critical Strike": true,
+                                "#% increased Armour and Energy Shield": 60,
+                                "#% reduced maximum Mana": 50
+                            }
+                        }
+                    },
+                    "requirements": {
+                        "Int": 53,
+                        "Str": 53,
+                        "Level": 35
+                    },
+                    "uuid": "8c57949168351a72faaba1ed13c9dea3e50ccf429d2d2df0d030f49118307259",
+                    "modsPseudo": {
+                        "#% Total increased Armour": 60,
+                        "#% Total increased Energy Shield": 60
+                    },
+                    "propertiesPseudo": {
+                        "Armour": {
+                            "estimatedQ20": {
+                                "Armour": 248,
+                                "Energy Shield": 74
+                            }
+                        }
+                    },
+                    "sockets": {
+                        "totalRed": 2,
+                        "totalBlue": 1,
+                        "socketCount": 3,
+                        "allSocketsSorted": "BRR",
+                        "largestLinkGroup": 2,
+                        "allSocketsGGG": "B-R R",
+                        "sortedLinkGroup": {
+                            "1": "R",
+                            "0": "BR"
+                        },
+                        "allSockets": "BR-R"
+                    },
+                    "modsTotal": {
+                        "#% increased Armour and Energy Shield": 60,
+                        "#% reduced maximum Mana": 50
+                    },
+                    "attributes": {
+                        "explicitModsCount": 3,
+                        "inventoryHeight": 3,
+                        "corrupted": false,
+                        "league": "Prophecy",
+                        "inventoryWidth": 2,
+                        "baseItemName": "Holy Chainmail",
+                        "identified": true,
+                        "baseItemType": "Armour",
+                        "rarity": "Unique",
+                        "ilvl": 49,
+                        "mirrored": false,
+                        "lockedToCharacter": false,
+                        "equipType": "Body",
+                        "frameType": 3,
+                        "itemType": "Body"
+                    },
+                    "properties": {
+                        "Armour": {
+                            "Armour": 221,
+                            "Energy Shield": 66
+                        }
+                    }
+                },
+                "_index": "poe20160607"
+            }
+        ],
+        "total": 1,
+        "max_score": 1.0
+    },
+    "_shards": {
+        "successful": 1,
+        "failed": 0,
+        "total": 1
+    },
+    "took": 2354,
+    "aggregations": {
+        "NAME": {
+            "buckets": [
+                {
+                    "key": "Voll's Protector Holy Chainmail",
+                    "doc_count": 1
+                }
+            ],
+            "sum_other_doc_count": 0,
+            "doc_count_error_upper_bound": 0
+        }
+    },
+    "timed_out": false
+}
